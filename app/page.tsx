@@ -211,7 +211,7 @@ export default function Page() {
               <div className="gradient-border p-4">
                 <h3 className="text-xl font-bold text-gradient">‘C’ Certification - National Cadet Corps (NCC)</h3>
                 <p className="font-[JetBrains Mono] text-gray-400">NCC | 2023</p>
-                <p>Successfully completed 'C' Certification with active participation in 30+ leadership workshops and diverse training exercises.</p>
+                <p>Successfully completed \'C\' Certification with active participation in 30+ leadership workshops and diverse training exercises.</p>
               </div>
             </div>
           </GlassSection>
