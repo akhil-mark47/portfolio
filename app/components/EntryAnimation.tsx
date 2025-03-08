@@ -49,11 +49,11 @@ const CosmicParticles: React.FC = () => {
 
 const EntryAnimation: React.FC<EntryAnimationProps> = ({ onComplete }) => {
   useEffect(() => {
-    const sound = new Howl({
-      src: ['/assets/sounds/cosmic-entry.mp3'],
-      volume: 0.5,
-    });
-    sound.play();
+    // const sound = new Howl({
+    //   // src: ['/assets/sounds/cosmic-entry.mp3'],
+    //   volume: 0.5,
+    // });
+    // sound.play();
     const timer = setTimeout(onComplete, 3000);
     return () => clearTimeout(timer);
   }, [onComplete]);

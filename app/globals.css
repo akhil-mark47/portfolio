@@ -219,134 +219,28 @@ html {
 .glow-path {
   filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
 }
-/* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;200;300;400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --primary-gradient-from: #2D00F7;
-  --primary-gradient-to: #00E0FF;
-  --secondary-gradient-from: #FF003C;
-  --secondary-gradient-to: #FF00A8;
-}
-
-body {
-  background-color: #050505;
-  color: #ffffff;
-  font-family: 'Space Grotesk', sans-serif;
-  cursor: none;
-  overflow-x: hidden;
-}
-
-.custom-cursor {
-  width: 20px;
-  height: 20px;
-  background: linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
-  border-radius: 50%;
-  pointer-events: none;
-  transition: all 0.1s ease;
-  z-index: 9999;
-  position: fixed;
-}
-
-.custom-cursor.hover {
-  width: 40px;
-  height: 40px;
-  mix-blend-mode: difference;
-}
-
-.gradient-border {
+.glitch {
   position: relative;
-  border: double 1px transparent;
-  border-radius: 0.5rem;
-  background-image: linear-gradient(#050505, #050505), 
-    linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: glitch 3s infinite;
 }
 
-.gradient-border:hover {
-  box-shadow: 0 0 20px rgba(45, 0, 247, 0.2);
+@keyframes glitch {
+  0% { transform: translate(0); }
+  10% { transform: translate(-1px, 1px); }
+  20% { transform: translate(1px, -1px); }
+  30% { transform: translate(-1px, 0); }
+  40% { transform: translate(1px, 0); }
+  100% { transform: translate(0); }
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.animate-blink {
+  animation: blink 0.7s infinite;
 }
 
-.space-gradient {
-  background: radial-gradient(circle at center,
-    rgba(45, 0, 247, 0.15) 0%,
-    rgba(0, 224, 255, 0.1) 25%,
-    rgba(5, 5, 5, 0) 70%
-  );
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-/* Education Section Specific Styling 
-.education-section {
-  padding: 5rem 1rem;
-}
-
-@media (min-width: 768px) {
-  .education-section {
-    padding: 5rem 2rem;
-  }
-}
-
-.education-card {
-  margin-bottom: 3rem;
-}
-
-.education-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.education-card p {
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.education-card .period {
-  color: #9CA3AF; /* gray-400 
-  margin-bottom: 0.5rem;
-}
-
-.education-card .description {
-  color: #D1D5DB; /* gray-300 
-}
-
-/* Existing Utilities and Animations 
-@layer utilities {
-  .text-shadow-glow {
-    text-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.floating {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Smooth scroll behavior 
-html {
-  scroll-behavior: smooth;
-}
-
-/* Hide scrollbar but keep functionality 
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-} */

@@ -46,7 +46,7 @@ const skillsByCategory = [
       { name: 'Numpy', icon: <SiNumpy size={40} /> },
       { name: 'Pandas', icon: <SiPandas size={40} /> },
       { name: 'Flask', icon: <SiFlask size={40} /> },
-      { name: 'CrewAi', icon: <Image src="/assets/icons/crewai.png" alt="CrewAi" className="w-10 h-12" /> },
+      { name: 'CrewAi', icon: <Image src="/assets/icons/crewai.png" alt="CrewAi" width={40} height={48} /> },
     ],
   },
   {
