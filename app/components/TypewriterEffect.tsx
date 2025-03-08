@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 const TypewriterEffect: React.FC = () => {
   // Your taglines (cleaned up the formatting)
   const taglines: string[] = [
-    "Data Science & AI Enthusiast",
-    "B.Tech CSE (Data Science) Student",
+    "Data Science Student",
+    "AI Explorer",
     "Cloud Computing Enthusiast",
     "Mobile App Developer",
-    "AI Explorer",
+    
     "Machine Learning Enthusiast"
   ];
 
