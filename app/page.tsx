@@ -9,6 +9,7 @@ import GlassSection from './components/GlassSection';
 import SkillsRing from './components/SkillsRing';
 import Navigation from './components/Navigation';
 import EducationRoadmap from './components/EducationRoadmap';
+import TypewriterEffect from './components/TypewriterEffect';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
