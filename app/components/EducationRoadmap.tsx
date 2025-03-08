@@ -140,7 +140,7 @@ const EducationRoadmap: React.FC = () => {
         <div className="w-1/2 pr-32 flex justify-end">
           <div className="relative gradient-border p-8 w-[28rem] rounded-full bg-[rgba(5,5,5,0.9)] hover:scale-110 transition-all hover:shadow-[0_0_30px_rgba(147,51,234,0.7)] z-10">
             <h3 className="text-2xl font-bold text-gradient">Matriculation</h3>
-            <p className="font-[JetBrains Mono] text-gray-300">St. Mary\'s Bethany Convent Vidyalaya | 2021</p>
+            <p className="font-[JetBrains Mono] text-gray-300">St. Mary@apos;s Bethany Convent Vidyalaya | 2021</p>
             <p className="mt-3 text-gray-400">Passed with 10 GPA</p>
           </div>
         </div>

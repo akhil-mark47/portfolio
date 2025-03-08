@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-
 import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -17,7 +16,7 @@ import {
   FaGitAlt
 } from 'react-icons/fa';
 import { TbBrandCSharp, TbBrandCpp } from "react-icons/tb";
-import { SiPytorch, SiTensorflow, SiGooglecloud, SiOllama, SiPandas, SiNumpy, SiFlask, SiStreamlit, SiApachehadoop, SiVercel, SiHuggingface } from 'react-icons/si';
+import {  SiGooglecloud, SiOllama, SiPandas, SiNumpy, SiFlask, SiStreamlit, SiApachehadoop, SiVercel, SiHuggingface } from 'react-icons/si';
 import { FaC, FaFlutter } from 'react-icons/fa6';
 import { IoLogoJavascript } from 'react-icons/io';
 import { DiMysql } from 'react-icons/di';
