@@ -5,8 +5,8 @@ export default function Experience() {
     <GlassSection id="experience" title="Experience">
                 <div className="space-y-6">
                   <div className="gradient-border p-4">
-                    <h3 className="text-xl font-bold text-gradient">Web Developer</h3>
-                    <p className="font-[JetBrains Mono] text-gray-400">NAVAIDIX SOLUTIONS | Jan 2025 - Present</p>
+                    <h3 className="text-xl font-bold text-gradient">Web Developer (Freelance)</h3>
+                    <p className="font-[JetBrains Mono] text-gray-400">Navaidix Solutions, U.S Remote | Jan 2025 - Present</p>
                     <p>Building a dynamic staff recruitment website using React to enhance candidate hiring experience.</p>
                   </div>
                   <div className="gradient-border p-4">

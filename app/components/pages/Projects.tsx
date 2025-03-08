@@ -6,10 +6,10 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
           {
-            title: "SnapLearn: Smart Question Paper Generator",
-            desc: "Flutter-based mobile app that reduces question paper creation time by 75% using AI and OCR.",
-            tech: ["Flutter", "Google ML Kit", "Gemini 1.5 Pro"],
-            github: "https://github.com/akhil-varsh/SnapLearn",
+            "title": "OneDrop: Blood Donation Ecosystem",
+            "desc": "Flutter-based mobile app connecting citizens, hospitals, and blood banks to streamline blood donation and shortage management, featuring real-time inventory tracking and location-based hospital mapping.",
+            "tech": ["Flutter", "Firebase (Auth, Firestore)", "Google Maps Flutter", "FL Chart"],
+            "github": "https://github.com/akhil-varsh/OneDrop" // Replace with your actual GitHub link
           },
           {
             title: "Urban Hero: Waste Reporting Platform",
@@ -36,10 +36,10 @@ export default function Projects() {
             github: "https://github.com/akhil-varsh/RAG-Powered-Chatbot-for-Intelligent-Course-Assistance",
           },
           {
-            title: "Web Scraping Tool for Amazon Products",
-            desc: "Built a web scraping tool using Beautiful Soup to extract the top 10 product links from Amazon based on user input.",
-            tech: ["Beautiful Soup", "Python"],
-            github: "N/A",
+            title: "SnapLearn: Smart Question Paper Generator",
+            desc: "Flutter-based mobile app that reduces question paper creation time by 75% using AI and OCR.",
+            tech: ["Flutter", "Google ML Kit", "Gemini 1.5 Pro"],
+            github: "https://github.com/akhil-varsh/SnapLearn",
           },
         ].map((project) => (
           <div key={project.title} className="gradient-border p-4 flex flex-col">
