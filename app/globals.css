@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --space-black: #050505;
+  --primary-gradient-from: #2D00F7;
+  --primary-gradient-to: #00E0FF;
+  --starry-white: #E6E6FA;
+}
+
+body {
+  background: var(--space-black);
+  color: var(--starry-white);
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: none;
+  overflow-x: hidden;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.1s ease;
+  z-index: 9999;
+  position: fixed;
+}
+
+.custom-cursor.hover {
+  width: 40px;
+  height: 40px;
+  mix-blend-mode: difference;
+}
+
+.gradient-border {
+  position: relative;
+  border: double 1px transparent;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(var(--space-black), var(--space-black)), 
+    linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-border:hover {
+  box-shadow: 0 0 20px rgba(45, 0, 247, 0.2);
+}
+
+.gradient-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: double 1px transparent;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(var(--space-black), var(--space-black)), 
+    linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.3);
+}
+
+.space-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(5, 5, 5, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.nav-button {
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--starry-white); /* Ensure text is visible */
+  background: linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property */
+  border: double 1px transparent;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(var(--space-black), var(--space-black)), 
+    linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: transform 0.2s ease;
+}
+.nav-button:hover {
+  transform: scale(1.1);
+}
+
+.nav-button:active {
+  animation: launch 0.5s ease;
+}
+
+@keyframes launch {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+/* Flame effect on active */
+.nav-button::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  background: linear-gradient(to bottom, rgba(255, 69, 0, 0.8), transparent);
+  transition: all 0.2s ease;
+}
+
+.nav-button:active::after {
+  width: 10px;
+  height: 20px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.text-gradient::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  animation: lensFlare 1s ease-out forwards;
+}
+
+@keyframes lensFlare {
+  0% { opacity: 1; transform: scale(0); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+.space-gradient {
+  background: radial-gradient(circle at center,
+    rgba(45, 0, 247, 0.15) 0%,
+    rgba(0, 224, 255, 0.1) 25%,
+    rgba(5, 5, 5, 0) 70%
+  );
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.2);
+  transition: transform 0.3s ease;
+  width: 70vw; /* 70% of viewport width */
+  margin-left: auto;
+  margin-right: auto; /* Center horizontally */
+}
+
+.glass-panel:hover {
+  transform: translateY(-5px);
+}
+
+/* Add spacing between sections */
+section {
+  padding-top: 3.5rem; /* Increased from default */
+  padding-bottom: 3.5rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Add this to your existing CSS */
+.hover-shadow-glow:hover {
+  box-shadow: 0 0 15px rgba(78, 152, 236, 0.6), 0 0 30px rgba(138, 43, 226, 0.4);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(78, 152, 236, 0.6), 0 0 30px rgba(138, 43, 226, 0.4);
+}
+
+.glow-path {
+  filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+}
+/* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-gradient-from: #2D00F7;
+  --primary-gradient-to: #00E0FF;
+  --secondary-gradient-from: #FF003C;
+  --secondary-gradient-to: #FF00A8;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: none;
+  overflow-x: hidden;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.1s ease;
+  z-index: 9999;
+  position: fixed;
+}
+
+.custom-cursor.hover {
+  width: 40px;
+  height: 40px;
+  mix-blend-mode: difference;
+}
+
+.gradient-border {
+  position: relative;
+  border: double 1px transparent;
+  border-radius: 0.5rem;
+  background-image: linear-gradient(#050505, #050505), 
+    linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-border:hover {
+  box-shadow: 0 0 20px rgba(45, 0, 247, 0.2);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.space-gradient {
+  background: radial-gradient(circle at center,
+    rgba(45, 0, 247, 0.15) 0%,
+    rgba(0, 224, 255, 0.1) 25%,
+    rgba(5, 5, 5, 0) 70%
+  );
+}
+
+/* Education Section Specific Styling 
+.education-section {
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .education-section {
+    padding: 5rem 2rem;
+  }
+}
+
+.education-card {
+  margin-bottom: 3rem;
+}
+
+.education-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.education-card p {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.education-card .period {
+  color: #9CA3AF; /* gray-400 
+  margin-bottom: 0.5rem;
+}
+
+.education-card .description {
+  color: #D1D5DB; /* gray-300 
+}
+
+/* Existing Utilities and Animations 
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Smooth scroll behavior 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep functionality 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+} */
