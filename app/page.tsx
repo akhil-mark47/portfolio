@@ -90,14 +90,11 @@ export default function Page() {
                 >
                   Akhilvarsh Pettem
                 </motion.h1>
-                <motion.p
-                  className="text-xl font-[JetBrains Mono] text-[var(--starry-white)] mt-4 floating"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1, duration: 1 }}
-                >
-                  Data Science & AI Enthusiast
-                </motion.p>
+                 <div>
+
+      <TypewriterEffect />
+
+    </div>
               </div>
             </motion.div>
         
