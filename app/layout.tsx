@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import CosmicCursor from './components/CosmicCursor';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: 'AK\'s Galaxy',
@@ -19,7 +20,7 @@ export default function RootLayout({
         <CosmicCursor />
         {children}
         <Analytics />
-
+        <SpeedInsights />
       </body>
     </html>
   );
