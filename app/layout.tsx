@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import CosmicCursor from './components/CosmicCursor';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: 'AK\'s Galaxy',
@@ -17,6 +18,8 @@ export default function RootLayout({
       <body>
         <CosmicCursor />
         {children}
+        <Analytics />
+
       </body>
     </html>
   );
