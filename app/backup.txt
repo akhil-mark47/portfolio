@@ -56,6 +56,9 @@ import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import EntryAnimation from './components/EntryAnimation';
+import StarField from './components/StarField';
+import Moon from './components/Moon';
+import Astronaut from './components/Astronaut';
 import GlassSection from './components/GlassSection';
 import SkillsRing from './components/SkillsRing';
 import Navigation from './components/Navigation';
@@ -84,9 +87,8 @@ export default function Page() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className="flex flex-col md:flex-row items-center justify-center z-10 gap-6 md:gap-12 w-full max-w-4xl px-4" // Responsive stack
+              className="flex flex-col md:flex-row items-center justify-center z-10 gap-6 md:gap-12 w-full max-w-4xl px-4"
             >
-              {/* Profile Image */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -125,11 +127,11 @@ export default function Page() {
                   transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                 >
                   <Image
-                    src="/assets/images/profile.png" // Replace with your actual image path
+                    src="/assets/images/profile.jpg"
                     alt="Pettem Akhilvarsh"
-                    width={250} // Reduced for mobile
+                    width={250}
                     height={250}
-                    className="rounded-full object-cover hover:shadow-[0_0_35px_rgba(147,51,234,0.9)] transition-all md:w-[300px] md:h-[300px]" // Responsive size
+                    className="rounded-full object-cover hover:shadow-[0_0_35px_rgba(147,51,234,0.9)] transition-all md:w-[300px] md:h-[300px]"
                   />
                   <motion.div
                     className="absolute inset-0 border-3 border-dashed border-purple-400 rounded-full"
@@ -137,10 +139,28 @@ export default function Page() {
                     transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
                   />
                 </motion.div>
-                
+                {[...Array(8)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute h-2 w-2 rounded-full bg-gradient-to-br from-purple-400 to-blue-400"
+                    style={{
+                      left: `${Math.cos((i / 8) * 2 * Math.PI) * 120 + 125}px`,
+                      top: `${Math.sin((i / 8) * 2 * Math.PI) * 120 + 125}px`,
+                      zIndex: 5,
+                    }}
+                    animate={{
+                      scale: [0.5, 1, 0.5],
+                      opacity: [0.3, 1, 0.3],
+                    }}
+                    transition={{
+                      duration: 1.5 + i * 0.2,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                      delay: i * 0.1,
+                    }}
+                  />
+                ))}
               </motion.div>
-
-              {/* Name and Tagline */}
               <div className="text-center">
                 <motion.h1
                   className="text-5xl md:text-8xl font-bold text-gradient"
@@ -148,7 +168,7 @@ export default function Page() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5, duration: 1 }}
                 >
-                  Akhilvarsh Pettem
+                  Pettem Akhilvarsh
                 </motion.h1>
                 <motion.p
                   className="text-lg md:text-xl font-[JetBrains Mono] text-[var(--starry-white)] mt-4 floating"
@@ -160,6 +180,8 @@ export default function Page() {
                 </motion.p>
               </div>
             </motion.div>
+            <Moon />
+            <Astronaut />
           </section>
 
           <GlassSection id="experience" title="Experience">
@@ -267,9 +289,9 @@ export default function Page() {
                 <p>Stood out among 180+ teams by proposing a groundbreaking solution during the Innovasia Hackathon.</p>
               </div>
               <div className="gradient-border p-4">
-                <h3 className="text-xl font-bold text-gradient">‘C’ Certification - National Cadet Corps (NCC)</h3>
+                <h3 className="text-xl font-bold text-gradient">&apos;C&apos; Certification - National Cadet Corps (NCC)</h3>
                 <p className="font-[JetBrains Mono] text-gray-400">NCC | 2023</p>
-                <p>Successfully completed 'C' Certification with active participation in 30+ leadership workshops and diverse training exercises.</p>
+                <p>Successfully completed &apos;C&apos; Certification with active participation in 30+ leadership workshops and diverse training exercises.</p>
               </div>
             </div>
           </GlassSection>
