@@ -104,13 +104,14 @@ export default function Page() {
        
           </section>
 
-          <GlassSection id="experience" title="Experience">
-            <div className="space-y-6">
-              <div className="gradient-border p-4">
-                <h3 className="text-xl font-bold text-gradient">Technical Volunteer - VJ Data Questers</h3>
-                <p className="font-[JetBrains Mono] text-gray-400">VNR VJIET | Nov 2024 - Present</p>
-                <p>Contributing to data science initiatives and technical events</p>
-              </div>
+  
+          <GlassSection id="freelancing" title="Freelancing">
+  <div className="space-y-6">
+    <div className="gradient-border p-4">
+      <h3 className="text-xl font-bold text-gradient">Web Developer</h3>
+      <p className="font-[JetBrains Mono] text-gray-400">NAVAIDIX SOLUTIONS | Jan 2025 - Present</p>
+      <p>Building a dynamic staff recruitment website using React to enhance candidate hiring experience.</p>
+    </div>
               <div className="gradient-border p-4">
                 <h3 className="text-xl font-bold text-gradient">Industrial Trainee</h3>
                 <p className="font-[JetBrains Mono] text-gray-400">NSIC Technical Services Centre, ECIL | June 2023 - Nov 2023</p>
