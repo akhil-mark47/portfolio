@@ -103,7 +103,7 @@ export default function Page() {
           </section>
 
   
-          <GlassSection id="freelancing" title="Freelancing">
+          <GlassSection id="experience" title="Freelancing">
   <div className="space-y-6">
     <div className="gradient-border p-4">
       <h3 className="text-xl font-bold text-gradient">Web Developer</h3>
