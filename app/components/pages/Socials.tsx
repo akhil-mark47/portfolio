@@ -69,39 +69,52 @@ export default function Socials() {
       const links = marquee.querySelectorAll('a');
       
       // Get marquee position and center point
-      const marqueeRect = marquee.getBoundingClientRect();
       const centerX = window.innerWidth / 2;
       
-      // Find closest link to center and apply spotlight
-      let hasSpotlight = false; // Track if any link has spotlight
+      // Find closest link to center
+      let closestLink: Element | null = null;
+      let minDistance = Infinity;
       
+      // First pass: find the closest link to center
       links.forEach((link) => {
         const linkRect = link.getBoundingClientRect();
         const linkCenterX = linkRect.left + linkRect.width / 2;
         const distanceFromCenter = Math.abs(linkCenterX - centerX);
         
-        // Apply spotlight class based on proximity to center - wider spotlight zone
-        if (distanceFromCenter < 75) { // Increased from 60
+        if (distanceFromCenter < minDistance) {
+          minDistance = distanceFromCenter;
+          closestLink = link;
+        }
+      });
+      
+      // Second pass: apply spotlight to closest link only, dim others based on distance
+      links.forEach((link) => {
+        const linkRect = link.getBoundingClientRect();
+        const linkCenterX = linkRect.left + linkRect.width / 2;
+        const distanceFromCenter = Math.abs(linkCenterX - centerX);
+        
+        // If this is the closest link and it's within a reasonable distance from center
+        if (link === closestLink && minDistance < 100) {
           link.classList.add('spotlight');
-          hasSpotlight = true;
           
           // Apply enhanced spotlight effect with larger size
           link.style.opacity = "1";
-          link.style.transform = "scale(1.3)"; // Larger scale
+          link.style.transform = "scale(1.3)";
           link.style.filter = "brightness(1.3) saturate(1.2) drop-shadow(0 0 12px currentColor)";
           link.style.zIndex = "10";
         } else {
           link.classList.remove('spotlight');
           
-          // Calculate opacity and scale based on distance (more gradient effect)
-          // Further icons are more dimmed than before
-          const opacity = Math.max(0.25, 1 - (distanceFromCenter / 150));
-          const scale = Math.max(0.75, 1 - (distanceFromCenter / 300));
+          // Calculate gradient effect based on distance
+          // The closer to the center, the less dimmed
+          const maxDistance = 400; // Distance at which icons reach minimum opacity/scale
+          const opacity = Math.max(0.2, 1 - (distanceFromCenter / maxDistance));
+          const scale = Math.max(0.7, 1 - (distanceFromCenter / (maxDistance * 1.2)));
           
-          // Apply styles with darkening filter
+          // Apply styles with darkening filter - further = darker
           link.style.opacity = opacity.toString();
           link.style.transform = `scale(${scale})`;
-          link.style.filter = "brightness(0.6) saturate(0.7)";
+          link.style.filter = "brightness(0.5) saturate(0.6)";
           link.style.zIndex = "1";
         }
       });
@@ -136,8 +149,8 @@ export default function Socials() {
         {/* Background gradient effect */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.2)_0%,rgba(5,5,5,0)_70%)] pointer-events-none"></div>
         
-        {/* Enhanced spotlight beam effect */}
-        <div className="absolute left-1/2 top-0 h-full w-4 bg-gradient-to-b from-purple-500/40 via-blue-500/30 to-transparent transform -translate-x-1/2 pointer-events-none blur-xl z-5"></div>
+        {/* Enhanced spotlight beam effect - narrower beam */}
+        <div className="absolute left-1/2 top-0 h-full w-3 bg-gradient-to-b from-purple-500/40 via-blue-500/30 to-transparent transform -translate-x-1/2 pointer-events-none blur-md z-5"></div>
         
         {/* Scrolling marquee container */}
         <div className="relative overflow-hidden mx-auto max-w-full">
@@ -156,16 +169,19 @@ export default function Socials() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`transition-all ${social.className || ''}`}
-                    style={social.style}
+                    style={{ 
+                      ...social.style,
+                      margin: '0 1.8rem' // Add more spacing between icons
+                    }}
                     whileHover={{ 
-                      scale: 1.6, // Even larger on hover
+                      scale: 1.6,
                       rotate: social.hoverRotate,
                       zIndex: 20,
                       filter: "brightness(1.4) saturate(1.3) drop-shadow(0 0 15px currentColor)"
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <social.Icon size={55} /> {/* Slightly larger base size */}
+                    <social.Icon size={48} />
                   </motion.a>
                 ))}
               </div>
