@@ -256,4 +256,85 @@ html {
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
+/* Updates to social marquee animation */
+.social-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: social-scroll 30s linear infinite; /* Better speed for dramatic effect */
+  position: relative;
+}
 
+.social-marquee-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+
+/* Make all icons semi-transparent and darker by default */
+.social-marquee-content a {
+  position: relative;
+  transition: all 0.5s ease;
+  opacity: 0.25; /* Even darker when not spotlighted */
+  transform: scale(0.75); /* Smaller when not in spotlight */
+  margin: 0 1.5rem;
+  filter: brightness(0.4) saturate(0.5); /* Darker and less saturated */
+}
+
+/* Create spotlight center zone */
+.social-marquee-track::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 150px; /* Wider spotlight zone */
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(147, 51, 234, 0.35) 0%, /* More visible gradient */
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Spotlight effect for icons in center - more dramatic */
+.social-marquee-content a:hover,
+.social-marquee-content a.spotlight {
+  opacity: 1;
+  transform: scale(1.8); /* Much larger when spotlighted */
+  filter: brightness(1.5) saturate(1.2) drop-shadow(0 0 12px currentColor); /* Brighter with glow */
+  z-index: 10;
+}
+
+@keyframes social-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% * (1/4))); /* Adjusted for 4 sets of icons */
+  }
+}
+
+/* Pause animation on hover */
+.social-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Make icons larger on smaller screens for better touch targets */
+@media (max-width: 768px) {
+  .social-marquee-content a svg {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .social-marquee-track::after {
+    width: 100px;
+  }
+  
+  /* Adjust spotlight scaling for mobile */
+  .social-marquee-content a.spotlight {
+    transform: scale(1.2); /* Slightly smaller scale increase on mobile */
+  }
+}
