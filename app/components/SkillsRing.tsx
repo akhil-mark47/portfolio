@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -45,7 +47,7 @@ const skillsByCategory = [
       { name: 'Numpy', icon: <SiNumpy size={40} /> },
       { name: 'Pandas', icon: <SiPandas size={40} /> },
       { name: 'Flask', icon: <SiFlask size={40} /> },
-      { name: 'CrewAi', icon: <img src="/assets/icons/crewai.png" alt="CrewAi" className="w-10 h-12" /> },
+      { name: 'CrewAi', icon: <Image src="/assets/icons/crewai.png" alt="CrewAi" className="w-10 h-12" /> },
     ],
   },
   {
