@@ -19,6 +19,19 @@ body {
   overflow-x: hidden;
 }
 
+.cursor {
+  display: inline-block;
+  margin-left: 3px;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 .custom-cursor {
   width: 20px;
   height: 20px;
