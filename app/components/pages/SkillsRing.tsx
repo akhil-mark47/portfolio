@@ -16,7 +16,7 @@ import {
   FaGitAlt
 } from 'react-icons/fa';
 import { TbBrandCSharp, TbBrandCpp } from "react-icons/tb";
-import {  SiGooglecloud, SiOllama, SiPandas, SiNumpy, SiFlask, SiStreamlit, SiApachehadoop, SiVercel, SiHuggingface } from 'react-icons/si';
+import {  SiGooglecloud, SiOllama, SiPandas, SiNumpy, SiFlask, SiStreamlit, SiApachehadoop, SiVercel, SiHuggingface, SiSupabase } from 'react-icons/si';
 import { FaC, FaFlutter } from 'react-icons/fa6';
 import { IoLogoJavascript } from 'react-icons/io';
 import { DiMysql } from 'react-icons/di';
@@ -53,6 +53,7 @@ const skillsByCategory = [
     category: 'Platforms',
     skills: [
       { name: 'Github', icon: <FaGithub size={40} /> },
+{ name: 'Supabase', icon: <SiSupabase size={40} /> },
       { name: 'Streamlit', icon: <SiStreamlit size={40} /> },
       { name: 'Vercel', icon: <SiVercel size={40} /> },
       { name: 'Firbase', icon: <IoLogoFirebase  size={40} /> },
