@@ -30,12 +30,12 @@ export default function Page() {
   return (
     <main className="bg-[var(--space-black)] overflow-hidden">
       <StarFieldDynamic />
-      <Navigation />
       <AnimatePresence>
         {showEntry && <EntryAnimation onComplete={handleEntryComplete} />}
       </AnimatePresence>
       {!showEntry && (
         <>
+           <Navigation />
           <Hero />
           <About />
           <Experience />

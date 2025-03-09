@@ -7,5 +7,14 @@
     "not ie 11",
     "not ios_saf <= 18.1",
     "not safari <= 18.1"
-  ]
+  ],
+  "hints": {
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off"
+      }
+    ],
+    "button-type": "off"
+  }
 }
