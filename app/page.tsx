@@ -17,6 +17,7 @@ import EntryAnimation from './components/EntryAnimation';
 import EducationRoadmap from './components/pages/EducationRoadmap';
 import GlassSection from './components/GlassSection';
 import SkillsRing from './components/pages/SkillsRing';
+import Certifications from './components/pages/Certifications';
 const StarFieldDynamic = dynamic(() => import('./components/StarField'), { ssr: false });
 
 export default function Page() {
@@ -47,6 +48,7 @@ export default function Page() {
             <SkillsRing />
           </GlassSection>
           <Projects />
+          <Certifications />
           <Achievements />
           <Volunteering />
           <Contact />

@@ -410,3 +410,37 @@ html {
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+#certifications {
+  position: relative;
+  overflow: hidden;
+}
+
+#certifications video {
+  filter: brightness(0.7) contrast(1.2);
+}
+
+#certifications .perspective-1000 {
+  perspective: 1000px;
+}
+
+#certifications .preserve-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+#certifications .backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari */
+}
+
+#certifications .bifrost-cert {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.3);
+}
+
+#certifications .bifrost-cert:hover {
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.5), 0 0 40px rgba(0, 224, 255, 0.3);
+}
+
