@@ -22,20 +22,6 @@ body {
 * {
   cursor: none !important;
 }
-
-.cursor {
-  display: inline-block;
-  margin-left: 3px;
-  width: 3px;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 .alien-spaceship-cursor {
   width: 50px;
   height: 50px;
@@ -45,20 +31,18 @@ body {
   transform: translate(-50%, -50%);
   transition: transform 0.1s ease;
   animation: float 1.5s infinite ease-in-out;
-  filter: drop-shadow(0 0 20px var(--primary-gradient-to));
+  filter: drop-shadow(0 0 20px #00ccff);
 }
 
-/* Spaceship Body */
 .spaceship-body {
-  background: linear-gradient(135deg, var(--primary-gradient-from), var(--primary-gradient-to));
+  background: radial-gradient(circle at 50% 30%, #d3d3d3, #a9a9a9);
   border-radius: 50%;
   width: 50px;
   height: 25px;
-  border: 2px solid var(--primary-gradient-from);
-  box-shadow: 0 0 20px var(--primary-gradient-to);
+  border: 2px solid #333;
+  box-shadow: 0 0 20px #00ccff;
 }
 
-/* Dome */
 .dome {
   background: radial-gradient(circle at 50% 30%, #add8e6, #87ceeb);
   border-radius: 50%;
@@ -66,10 +50,9 @@ body {
   height: 15px;
   margin: auto;
   margin-top: -10px;
-  box-shadow: 0 0 15px var(--primary-gradient-to);
+  box-shadow: 0 0 15px #00ccff;
 }
 
-/* Flames */
 .flames {
   display: flex;
   justify-content: center;
@@ -79,50 +62,51 @@ body {
 .flame {
   width: 8px;
   height: 25px;
-  background: linear-gradient(to bottom, #ff5e00, #ffcc00, transparent);
+  background: linear-gradient(orange, red);
   border-radius: 50%;
   margin: 0 3px;
-  animation: thrust 0.1s infinite alternate, flicker 0.2s infinite alternate;
-  filter: blur(2px);
+  animation: flicker 0.15s infinite alternate;
+  box-shadow: 0 0 25px #ff4500;
 }
 
-/* Flame Animation */
-@keyframes thrust {
-  0% { transform: scaleY(0.9); opacity: 0.8; }
-  100% { transform: scaleY(1.3); opacity: 1; }
+.particle {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: var(--primary-gradient-to);
+  border-radius: 50%;
+  animation: particleFade 1s forwards;
+}
+
+@keyframes particleFade {
+  to { transform: translateY(-30px) scale(0); opacity: 0; }
+}
+
+.shockwave {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #00ccff;
+  background: transparent;
+  animation: shockwaveExpand 0.6s forwards;
+}
+
+@keyframes shockwaveExpand {
+  to { transform: scale(5); opacity: 0; }
 }
 
 @keyframes flicker {
-  0% { transform: scaleY(1); opacity: 0.8; }
+  0% { transform: scaleY(1); opacity: 0.9; }
   100% { transform: scaleY(1.5); opacity: 0.5; }
 }
 
-/* Space Warp Trail Effect */
-.alien-spaceship-cursor::after {
-  content: '';
-  position: absolute;
-  width: 120px;
-  height: 5px;
-  background: linear-gradient(to right, var(--primary-gradient-to), transparent);
-  right: -100px;
-  top: 50%;
-  transform: translateY(-50%) rotate(-45deg);
-  filter: blur(10px);
-  opacity: 0.7;
-  animation: spaceWarp 0.2s infinite alternate;
-}
-
-@keyframes spaceWarp {
-  0% { width: 100px; opacity: 0.5; }
-  100% { width: 150px; opacity: 1; }
-}
-
-/* Float Animation */
 @keyframes float {
   0% { transform: translate(-50%, -50%) translateY(0); }
   50% { transform: translate(-50%, -50%) translateY(-10px); }
   100% { transform: translate(-50%, -50%) translateY(0); }
 }
+
 
 /* .custom-cursor {
   width: 20px;

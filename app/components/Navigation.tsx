@@ -9,6 +9,8 @@ const navItems = [
  { name: 'Education', id: 'education' },
  { name: 'Skills', id: 'skills' },
  { name: 'Projects', id: 'projects' },
+ { name: 'Certifications', id: 'certifications' },
+
  { name: 'Achievements', id: 'achievements' },
  { name: 'Volunteering', id: 'volunteering' },
 ];
