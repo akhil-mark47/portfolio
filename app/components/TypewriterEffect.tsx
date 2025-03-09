@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useMemo } from 'react';
 
 const TypewriterEffect: React.FC = () => {
   // Your taglines (cleaned up the formatting)
-  const taglines: string[] = [
+  const taglines = useMemo(() => [
     "Data Science Student",
     "AI Explorer",
     "Cloud Computing Enthusiast",
     "Mobile App Developer",
-    
     "Machine Learning Enthusiast"
-  ];
+  ], []);
+  
 
   const [currentTaglineIndex, setCurrentTaglineIndex] = useState<number>(0);
   const [displayText, setDisplayText] = useState<string>('');

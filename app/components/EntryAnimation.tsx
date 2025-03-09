@@ -105,7 +105,7 @@ const HyperSpaceMeteors: React.FC<{ cameraRef: React.MutableRefObject<THREE.Pers
  groupRef.current.add(mesh, trail);
  meteors.push({ mesh, velocity, trail, trailGeometry, material, trailMaterial });
  }
- }, []);
+ }, [isMobile, meteorCount, meteors]);
 
  return <group ref={groupRef} />;
 };
