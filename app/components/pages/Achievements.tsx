@@ -10,13 +10,13 @@ export default function Achievements() {
           <p>Reached the finals among 160+ teams by developing innovative solutions aligned with sustainable development goals.</p>
         </div>
         <div className="gradient-border p-4">
-          <h3 className="text-xl font-bold text-gradient">Finalist - Smart India Hackathon (SIH)</h3>
-          <p className="font-[JetBrains Mono] text-gray-400">Internal Hackathon | 2024</p>
+          <h3 className="text-xl font-bold text-gradient">Smart India Hackathon (SIH)</h3>
+          <p className="font-[JetBrains Mono] text-gray-400">Ministry Of Education,India | 2024</p>
           <p>Participated in the internal round of Smart India Hackathon under the software category.</p>
         </div>
         <div className="gradient-border p-4">
           <h3 className="text-xl font-bold text-gradient">Finalist - Innovasia Hackathon</h3>
-          <p className="font-[JetBrains Mono] text-gray-400">Innovasia | 2024</p>
+          <p className="font-[JetBrains Mono] text-gray-400">VCE | 2024</p>
           <p>Stood out among 180+ teams by proposing a groundbreaking solution during the Innovasia Hackathon.</p>
         </div>
         <div className="gradient-border p-4">
