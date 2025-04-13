@@ -31,52 +31,52 @@ const PersonalSpace: React.FC = () => {
           <div className="flex items-center">
             <span className="text-blue-400 mr-2">🚀</span> Exploring emerging tech, AI, and LLMs
           </div>
-          <img
+{/*           <img
             src="https://via.placeholder.com/300x200?text=Tech+Exploration"
             alt="Tech Exploration"
             className="w-full h-48 object-cover rounded"
-          />
+          /> */}
         </div>,
         <div key="coding" className="space-y-2">
           <div className="flex items-center">
             <span className="text-blue-400 mr-2">⌨️</span> Coding new universes through web and AI development
           </div>
-          <img
+{/*           <img
             src="https://via.placeholder.com/300x200?text=Coding+Project"
             alt="Coding"
             className="w-full h-48 object-cover rounded"
-          />
+          /> */}
         </div>,
         <div key="stargazing" className="space-y-2">
           <div className="flex items-center">
             <span className="text-blue-400 mr-2">🔭</span> Amateur astronomy and stargazing
           </div>
-          <img
+{/*           <img
             src="https://via.placeholder.com/300x200?text=Stargazing"
             alt="Stargazing"
             className="w-full h-48 object-cover rounded"
-          />
+          /> */}
         </div>,
         <div key="gaming" className="space-y-2">
           <div className="flex items-center">
             <span className="text-blue-400 mr-2">🎮</span> Exploring virtual worlds in sci-fi and strategy games
           </div>
-          <img
+{/*           <img
             src="https://via.placeholder.com/300x200?text=Gaming"
             alt="Gaming"
             className="w-full h-48 object-cover rounded"
-          />
+          /> */}
         </div>,
        
         <div key="data-viz" className="space-y-2">
           <div className="flex items-center">
             <span className="text-blue-400 mr-2">📊</span> Visualizing data & uncovering patterns
           </div>
-          <img
+{/*           <img
             src="https://via.placeholder.com/300x200?text=Data+Visualization"
             alt="Data Visualization"
             className="w-full h-48 object-cover rounded"
-          />
+          /> */}
         </div>,
         
       ],
