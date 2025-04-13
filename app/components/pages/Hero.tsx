@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+{/*       <div className="absolute inset-0 z-0">
         <video
           autoPlay
           muted
@@ -19,7 +19,7 @@ export default function Hero() {
           <source src="/assets/videos/public_videos_skills-bg.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
-      </div>
+      </div> */}
 
       {/* Content Overlay */}
       <motion.div
