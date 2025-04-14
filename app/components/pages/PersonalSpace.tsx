@@ -512,14 +512,14 @@ useEffect(() => {
 <AnimatePresence>
   {moviePreview && (
     <motion.div
-      className="fixed inset-0 z-60 flex items-center justify-center p-4 bg-black bg-opacity-90 backdrop-blur-sm"
+      className="fixed inset-0 z-60 flex items-center justify-center p-4 bg-black bg-opacity-90 backdrop-blur-sm movie-preview-container"
       initial="hidden"
       animate="visible"
       exit="exit"
       variants={previewVariants}
     >
       <motion.div 
-        className="relative bg-[rgba(10,10,30,0.95)] rounded-lg p-6 max-w-4xl w-full"
+        className="relative bg-[rgba(10,10,30,0.95)] rounded-lg p-6 max-w-4xl w-full movie-preview-container"
         initial={{ y: 20 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -529,8 +529,8 @@ useEffect(() => {
           <div className="flex items-center">
             <span className="text-2xl mr-2">🎬</span>
             <h3 className="text-lg font-[JetBrains Mono] text-[rgba(147,51,234,0.9)]">
-  {activePreviewTitle ? `${activePreviewTitle} Preview` : 'Movie Preview'}
-</h3>
+              {activePreviewTitle ? `${activePreviewTitle} Preview` : 'Movie Preview'}
+            </h3>
           </div>
           <button
             className="flex items-center px-3 py-1 bg-[rgba(59,130,246,0.2)] text-[var(--starry-white)] rounded hover:bg-[rgba(59,130,246,0.4)] transition-colors"
@@ -543,7 +543,7 @@ useEffect(() => {
         </div>
         
         {/* Frame with improved styling */}
-        <div className="relative rounded-md overflow-hidden border-2 border-[rgba(59,130,246,0.3)]">
+        <div className="relative rounded-md overflow-hidden border-2 border-[rgba(59,130,246,0.3)] movie-preview-container">
           <iframe
             width="100%"
             height="500"
@@ -552,7 +552,7 @@ useEffect(() => {
             frameBorder="0"
             allowFullScreen
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            className="bg-black"
+            className="bg-black movie-preview-iframe"
           ></iframe>
           
           {/* Loading indicator for iframe */}

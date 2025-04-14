@@ -29,6 +29,7 @@ const Navigation: React.FC<NavigationProps> = ({
     { name: 'Skills', id: 'skills' },
     { name: 'Projects', id: 'projects' },
     { name: 'Certifications', id: 'certifications' },
+    // { name: 'Gallery', id: 'gallery' }, 
     { name: 'Achievements', id: 'achievements' },
     { name: 'Volunteering', id: 'volunteering' },
     { name: ' My Space', href: '/personal-space' },
