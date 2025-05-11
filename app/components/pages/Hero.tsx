@@ -56,7 +56,7 @@ export default function Hero() {
             }}
           />
           <Image
-            src="/assets/images/profile.jpg"
+            src="/assets/images/p.jpeg"
             alt="Pettem Akhilvarsh"
             width={200}
             height={200}
@@ -87,3 +87,4 @@ export default function Hero() {
     </section>
   );
 }
+

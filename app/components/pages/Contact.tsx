@@ -21,7 +21,7 @@ export default function Contact() {
           Ready to launch a project or just want to connect? Transmit a signal my way!
         </p>
         <a
-          href="https://forms.gle/k6NVDdvsZ69e4ghn8"
+          href="mailto:akhilvarshpettem@gmail.com"
           className="gradient-button inline-flex items-center gap-2"
         >
           Send a Cosmic Message
