@@ -223,6 +223,15 @@ const PersonalSpace: React.FC = () => {
             className="w-full h-48 object-cover rounded"
           />
         </div>,
+        <div key="ai-engineering" className="space-y-2">
+          <h5 className="text-blue-400">AI Engineering</h5>
+          <p className="text-sm">Book by Chip Huyen focusing on building applications with foundation models.</p>
+          <img
+            src="https://m.media-amazon.com/images/I/815KH9GjFTL._AC_UF1000,1000_QL80_.jpg"
+            alt="AI Engineering Book Cover"
+            className="w-full h-48 object-cover rounded"
+          />
+        </div>,
       ],
       
     },
