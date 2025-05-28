@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import GlassSection from '../GlassSection';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import Image from 'next/image';
 interface Certificate {
   id: number;
   title: string;
@@ -60,7 +60,7 @@ const Certifications: React.FC = () => {
                     className="overflow-hidden mt-4"
                   >
                     <div className="border-2 border-blue-500 rounded-lg overflow-hidden bg-white p-2">
-                      <img
+                      <Image
                         src={cert.image}
                         alt={`${cert.title} Certificate`}
                         className="w-full object-contain max-h-[250px] sm:max-h-[400px]"

@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCallback, useEffect, useState } from 'react';
 import Starfield from '../StarField'; 
-
+import Image from 'next/image'; 
 const PersonalSpace: React.FC = () => {
   const [expandedPanel, setExpandedPanel] = useState<string | null>(null);
   const [showingFullscreen, setShowingFullscreen] = useState(false);
@@ -31,7 +31,7 @@ const PersonalSpace: React.FC = () => {
           <div className="flex items-center">
             <span className="text-blue-400 mr-2">🚀</span> Exploring emerging tech, AI, and LLMs
           </div>
-{/*           <img
+{/*           <Image
             src="https://via.placeholder.com/300x200?text=Tech+Exploration"
             alt="Tech Exploration"
             className="w-full h-48 object-cover rounded"
@@ -41,7 +41,7 @@ const PersonalSpace: React.FC = () => {
           <div className="flex items-center">
             <span className="text-blue-400 mr-2">⌨️</span> Coding new universes through web and AI development
           </div>
-{/*           <img
+{/*           <Image
             src="https://via.placeholder.com/300x200?text=Coding+Project"
             alt="Coding"
             className="w-full h-48 object-cover rounded"
@@ -51,7 +51,7 @@ const PersonalSpace: React.FC = () => {
           <div className="flex items-center">
             <span className="text-blue-400 mr-2">🔭</span> Amateur astronomy and stargazing
           </div>
-{/*           <img
+{/*           <Image
             src="https://via.placeholder.com/300x200?text=Stargazing"
             alt="Stargazing"
             className="w-full h-48 object-cover rounded"
@@ -61,7 +61,7 @@ const PersonalSpace: React.FC = () => {
           <div className="flex items-center">
             <span className="text-blue-400 mr-2">🎮</span> Exploring virtual worlds in sci-fi and strategy games
           </div>
-{/*           <img
+{/*           <Image
             src="https://via.placeholder.com/300x200?text=Gaming"
             alt="Gaming"
             className="w-full h-48 object-cover rounded"
@@ -72,7 +72,7 @@ const PersonalSpace: React.FC = () => {
           <div className="flex items-center">
             <span className="text-blue-400 mr-2">📊</span> Visualizing data & uncovering patterns
           </div>
-{/*           <img
+{/*           <Image
             src="https://via.placeholder.com/300x200?text=Data+Visualization"
             alt="Data Visualization"
             className="w-full h-48 object-cover rounded"
@@ -199,7 +199,7 @@ const PersonalSpace: React.FC = () => {
         <div key="hands-on-llms" className="space-y-2">
           <h5 className="text-blue-400">Hands-On Large Language Models</h5>
           <p className="text-sm">A comprehensive guide to understanding and building large language models.</p>
-          <img
+          <Image
             src="https://raw.githubusercontent.com/HandsOnLLM/Hands-On-Large-Language-Models/main/images/book_cover.png"
             alt="Hands-On Large Language Models Book Cover"
             className="w-full h-48 object-cover rounded"
@@ -208,7 +208,7 @@ const PersonalSpace: React.FC = () => {
         <div key="hands-on-ml" className="space-y-2">
           <h5 className="text-blue-400">Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow</h5>
           <p className="text-sm">Concepts, tools, and techniques to build intelligent systems.</p>
-          <img
+          <Image
             src="https://m.media-amazon.com/images/I/71UF9mDAX3L._AC_UF1000,1000_QL80_.jpg"
             alt="Hands-On Machine Learning Book Cover"
             className="w-full h-48 object-cover rounded"
@@ -217,7 +217,7 @@ const PersonalSpace: React.FC = () => {
         <div key="practical-data-science" className="space-y-2">
           <h5 className="text-blue-400">Practical Statistics for Data Scientists</h5>
           <p className="text-sm">Essential concepts and techniques for data analysis and machine learning using R.</p>
-          <img
+          <Image
             src="https://m.media-amazon.com/images/I/81Sdk02bg+L._AC_UF1000,1000_QL80_.jpg"
             alt="Practical Data Science with R Book Cover"
             className="w-full h-48 object-cover rounded"
@@ -226,7 +226,7 @@ const PersonalSpace: React.FC = () => {
         <div key="ai-engineering" className="space-y-2">
           <h5 className="text-blue-400">AI Engineering</h5>
           <p className="text-sm">Book by Chip Huyen focusing on building applications with foundation models.</p>
-          <img
+          <Image
             src="https://m.media-amazon.com/images/I/815KH9GjFTL._AC_UF1000,1000_QL80_.jpg"
             alt="AI Engineering Book Cover"
             className="w-full h-48 object-cover rounded"

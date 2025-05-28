@@ -15,14 +15,15 @@ const HyperSpaceMeteors: React.FC<{ cameraRef: React.MutableRefObject<THREE.Pers
  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768; // Mobile check
  const meteorCount = isMobile ? 75 : 150; // Fewer meteors on mobile
 
- const meteors: {
+ const meteorsRef = useRef<{
  mesh: THREE.Mesh;
  velocity: THREE.Vector3;
  trail: THREE.Line;
  trailGeometry: THREE.BufferGeometry;
  material: THREE.MeshBasicMaterial;
  trailMaterial: THREE.LineBasicMaterial;
- }[] = [];
+ }[]>([]);
+ const meteors = meteorsRef.current;
 
  useFrame((state, delta) => {
  const time = state.clock.getElapsedTime();
