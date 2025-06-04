@@ -76,7 +76,7 @@ const EducationRoadmap: React.FC = () => {
           <div className="w-1/2 pr-32 flex justify-end">
             <div className="relative gradient-border p-8 w-[28rem] rounded-full bg-[rgba(5,5,5,0.9)] hover:scale-110 transition-all hover:shadow-[0_0_30px_rgba(147,51,234,0.7)] z-10">
               <h3 className="text-2xl font-bold text-gradient">B.Tech CSE (Data Science)</h3>
-              <p className="font-[JetBrains Mono] text-gray-300">VNR VJIET | Jul 2024 - Present</p>
+              <p className="font-[JetBrains Mono] text-gray-300">VNR VJIET | July 2024 - May 2027 </p>
               <p className="mt-3 text-gray-400">Specializing in Data Science and AI technologies</p>
             </div>
           </div>
