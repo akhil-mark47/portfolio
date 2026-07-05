@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import CosmicCursor from './components/CosmicCursor';
+// import CosmicCursor from './components/CosmicCursor';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CosmicCursor />
+        {/* <CosmicCursor /> */}
         {children}
         <Analytics />
         <SpeedInsights />

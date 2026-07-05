@@ -10,7 +10,7 @@ export default function Experience() {
                     <p>Architected an end-to-end Computer Vision pipeline (YOLO26n-seg + ByteTrack) hitting 0.995 mAP with 7.5ms inference for real-time SaaS deployment.</p>
                   </div>
                   <div className="gradient-border p-4">
-                    <h3 className="text-xl font-bold text-gradient">Backend Intern</h3>
+                    <h3 className="text-xl font-bold text-gradient">Intern</h3>
                     <p className="font-[JetBrains Mono] text-gray-400">Fluition Sphere LLP, Hyderabad | June 2025 - July 2025</p>
                     <p>Built modular REST APIs with Next.js, Prisma & PostgreSQL, adding JWT auth, Azure Blob Storage and Postmark email for a React Native app.</p>
                   </div>

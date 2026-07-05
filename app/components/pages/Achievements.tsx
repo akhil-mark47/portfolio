@@ -15,6 +15,12 @@ export default function Achievements() {
           <p>Pupil (1385) on Codeforces, 1785 (3★, Div 2) on CodeChef, and 1695 on LeetCode (Top 8% globally) with 300+ problems solved.</p>
         </div>
         <div className="gradient-border p-4">
+          <h3 className="text-xl font-bold text-gradient">VNR Design-A-thon 4.O</h3>
+          <p className="font-[JetBrains Mono] text-gray-400">1st Position</p>
+          <p>Decentralized Agentic Edge Traffic System using Jetson Nano.</p>
+        </div>
+        
+        <div className="gradient-border p-4">
           <h3 className="text-xl font-bold text-gradient">Technical Fest Winner</h3>
           <p className="font-[JetBrains Mono] text-gray-400">Convergence · Techno-Vista 2K25</p>
           <p>1st in Map-an-App and 2nd in DV Contest at Convergence; Runner-up at the national-level Techno-Vista 2K25.</p>

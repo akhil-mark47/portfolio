@@ -16,13 +16,13 @@ body {
   background: var(--space-black);
   color: var(--starry-white);
   font-family: 'Space Grotesk', sans-serif;
-  cursor: none;
+  /* cursor: none; */
   overflow-x: hidden;
 }
 
-* {
+/* * {
   cursor: none !important;
-}
+} */
 
 .gradient-border {
   position: relative;
