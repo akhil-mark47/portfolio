@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Starfield from '../StarField';
+import SpaceObjects from '../SpaceObjects';
 
 /* ================================================================== */
 /*  Data                                                               */
@@ -535,6 +536,7 @@ const PersonalSpace: React.FC = () => {
         <Starfield />
       </motion.div>
       <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.10)_0%,rgba(147,51,234,0.05)_35%,transparent_70%)]" />
+      <SpaceObjects />
     </>
   );
 
