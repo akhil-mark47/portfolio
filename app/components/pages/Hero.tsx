@@ -56,7 +56,7 @@ export default function Hero() {
             }}
           />
           <Image
-            src="/assets/images/avatar.jpeg"
+            src="/assets/images/avatar.jpg"
             alt="Pettem Akhilvarsh"
             width={200}
             height={200}

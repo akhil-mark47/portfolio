@@ -6,40 +6,34 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
           {
-            "title": "OneDrop: Blood Donation Ecosystem",
-            "desc": "Flutter-based mobile app connecting citizens, hospitals, and blood banks to streamline blood donation and shortage management, featuring real-time inventory tracking and location-based hospital mapping.",
-            "tech": ["Flutter", "Firebase (Auth, Firestore)", "Google Maps Flutter", "FL Chart"],
-            "github": "https://github.com/akhil-varsh/OneDrop" // Replace with your actual GitHub link
+            title: "Multi-Agentic Competition Evaluation Engine",
+            desc: "Distributed worker-pull engine on a 20-node HPC GPU cluster serving 50+ concurrent teams at <60s latency with a local Qwen model pipeline.",
+            tech: ["Python", "CUDA", "Crontab", "Firebase"],
+            github: "https://github.com/akhil-varsh/Multi-Agentic-Competition-Evaluation-Engine",
           },
           {
-            title: "Urban Hero: Waste Reporting Platform",
-            desc: "Flutter app for waste reporting, increasing municipal response efficiency by 70% through real-time tracking.",
-            tech: ["Flutter", "Firebase"],
-            github: "https://github.com/akhil-varsh/UrbanHero",
+            title: "HPC GPU Cluster Management System",
+            desc: "Slurm-based workload manager for a college GPU lab with GRES allocation, shared NFS, and Grafana resource-accounting dashboards.",
+            tech: ["Slurm", "Grafana", "Python", "Linux"],
+            github: "https://github.com/akhil-varsh/hpc-gpu-pipeline",
           },
           {
-            title: "Syntax Sage: Code Analysis Platform",
-            desc: "Flask-based platform for automated code analysis using Llama 3.1:8B and CrewAI, improving efficiency by 60%.",
-            tech: ["Flask", "Llama 3.1:8B", "CrewAI", "Ollama"],
-            github: "https://github.com/akhil-varsh/SyntaxSage",
+            title: "AI-Powered Incident Management System",
+            desc: "Flask microservice cutting incident resolution 50% via RAG + ChromaDB, with Celery async lowering token costs ~70% at sub-200ms responses.",
+            tech: ["RAG", "Celery", "PostgreSQL", "ChromaDB"],
+            github: "https://github.com/akhil-varsh/Incident-Automation-Agent",
           },
           {
-            title: "CNN-Multi Class Classifier",
-            desc: "Built a CNN Classifier using PyTorch, achieving 90% accuracy on test data with efficient batch processing.",
-            tech: ["PyTorch", "Python", "Jupyter"],
-            github: "https://github.com/akhil-varsh/CNN-Multi-Class-Classifier",
+            title: "RAG-Based Financial Document Analysis",
+            desc: "LangChain + FAISS system analyzing 100+ page reports with <100ms search and <2s Groq-powered answers, hallucination-free.",
+            tech: ["RAG", "LangChain", "FAISS", "Groq"],
+            github: "https://github.com/akhil-varsh/RAG-Based-Financial-Document-Analysis-System",
           },
           {
-            title: "RAG-Powered Chatbot for Intelligent Course Assistance",
-            desc: "Developed a LangChain-powered chatbot using OCI Generative AI with Cohere embeddings for context-aware responses.",
-            tech: ["LangChain", "OCI", "Cohere Command Model", "Streamlit", "ChromaDB"],
-            github: "https://github.com/akhil-varsh/RAG-Powered-Chatbot-for-Intelligent-Course-Assistance",
-          },
-          {
-            title: "SnapLearn: Smart Question Paper Generator",
-            desc: "Flutter-based mobile app that reduces question paper creation time by 75% using AI and OCR.",
-            tech: ["Flutter", "Google ML Kit", "Gemini 1.5 Pro"],
-            github: "https://github.com/akhil-varsh/SnapLearn",
+            title: "Multi-Modal Sentiment Analysis System",
+            desc: "Attention-based fusion of text, audio and vision (RoBERTa, ViT, Wav2Vec2) reaching 81% accuracy across 50K+ samples, served via Streamlit.",
+            tech: ["Deep Learning", "Transformers", "Computer Vision", "Streamlit"],
+            github: "https://github.com/akhil-varsh/Multi-Modal-Sentiment-Analysis",
           },
         ].map((project) => (
           <div key={project.title} className="gradient-border p-4 flex flex-col">

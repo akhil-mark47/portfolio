@@ -14,7 +14,7 @@ import {
   FaGitAlt
 } from 'react-icons/fa';
 import { TbBrandCSharp, TbBrandCpp } from "react-icons/tb";
-import { SiGooglecloud, SiOllama, SiPandas, SiNumpy, SiFlask, SiStreamlit, SiApachehadoop, SiVercel, SiHuggingface, SiSupabase } from 'react-icons/si';
+import { SiGooglecloud, SiPandas, SiNumpy, SiFlask, SiStreamlit, SiVercel, SiHuggingface, SiSupabase, SiNodedotjs, SiNextdotjs, SiTailwindcss, SiPostgresql, SiMongodb, SiDocker, SiKubernetes, SiTensorflow, SiPrisma, SiCelery, SiGrafana } from 'react-icons/si';
 import { FaFlutter } from 'react-icons/fa6';
 import { IoLogoJavascript } from 'react-icons/io';
 import { DiMysql } from 'react-icons/di';
@@ -34,30 +34,33 @@ const skillsByCategory = [
     ],
   },
   {
-    category: 'Libraries/Frameworks',
+    category: 'Frameworks & Libraries',
     skills: [
-      { name: 'Hadoop', icon: <SiApachehadoop size={32} /> },
-      { name: 'Flutter', icon: <FaFlutter size={32} /> },
-      { name: 'Ollama', icon: <SiOllama size={32} /> },
+      { name: 'Node.js', icon: <SiNodedotjs size={32} /> },
+      { name: 'Next.js', icon: <SiNextdotjs size={32} /> },
       { name: 'React', icon: <FaReact size={32} /> },
-      { name: 'Git', icon: <FaGitAlt size={32} /> },
-      { name: 'Numpy', icon: <SiNumpy size={32} /> },
-      { name: 'Pandas', icon: <SiPandas size={32} /> },
       { name: 'Flask', icon: <SiFlask size={32} /> },
-      { name: 'CrewAi', icon: <Image src="/assets/icons/crewai.png" alt="CrewAi" width={32} height={38} /> },
+      { name: 'Flutter', icon: <FaFlutter size={32} /> },
+      { name: 'TensorFlow', icon: <SiTensorflow size={32} /> },
+      { name: 'Celery', icon: <SiCelery size={32} /> },
+      { name: 'Pandas', icon: <SiPandas size={32} /> },
+      { name: 'Numpy', icon: <SiNumpy size={32} /> },
+      { name: 'Tailwind', icon: <SiTailwindcss size={32} /> },
     ],
   },
   {
-    category: 'Platforms',
+    category: 'Cloud, Data & Tools',
     skills: [
-      { name: 'Github', icon: <FaGithub size={32} /> },
-      { name: 'Supabase', icon: <SiSupabase size={32} /> },
-      { name: 'Streamlit', icon: <SiStreamlit size={32} /> },
-      { name: 'Vercel', icon: <SiVercel size={32} /> },
-      { name: 'Firebase', icon: <IoLogoFirebase size={32} /> },
-      { name: 'Huggingface', icon: <SiHuggingface size={32}/> },
       { name: 'AWS', icon: <FaAws size={32} /> },
       { name: 'GCP', icon: <SiGooglecloud size={32} /> },
+      { name: 'Docker', icon: <SiDocker size={32} /> },
+      { name: 'Kubernetes', icon: <SiKubernetes size={32} /> },
+      { name: 'Git', icon: <FaGitAlt size={32} /> },
+      { name: 'PostgreSQL', icon: <SiPostgresql size={32} /> },
+      { name: 'MongoDB', icon: <SiMongodb size={32} /> },
+      { name: 'Prisma', icon: <SiPrisma size={32} /> },
+      { name: 'Firebase', icon: <IoLogoFirebase size={32} /> },
+      { name: 'Grafana', icon: <SiGrafana size={32} /> },
     ],
   },
 ];
