@@ -98,6 +98,39 @@ const Cosmo: React.FC<{ size?: number; reduce?: boolean }> = ({ size = 60, reduc
 );
 
 /* ------------------------------------------------------------------ */
+/*  Blazing asteroid — the compact tour launcher                       */
+/* ------------------------------------------------------------------ */
+const Asteroid: React.FC<{ size?: number; reduce?: boolean }> = ({ size = 40, reduce }) => (
+  <div style={{ width: size, height: size, position: 'relative' }} aria-hidden="true">
+    <svg viewBox="0 0 52 52" width="100%" height="100%">
+      <defs>
+        <radialGradient id="astRock" cx="0.38" cy="0.36" r="0.72">
+          <stop offset="0%" stopColor="#8a7f74" /><stop offset="55%" stopColor="#5b5249" /><stop offset="100%" stopColor="#2f2924" />
+        </radialGradient>
+        <radialGradient id="astGlow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stopColor="#ffb23e" stopOpacity="0.85" /><stop offset="100%" stopColor="#ffb23e" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <circle cx="24" cy="30" r="22" fill="url(#astGlow)" opacity="0.7" />
+      {/* blaze tongues trailing up-right */}
+      <motion.g style={{ transformOrigin: '34px 20px' }}
+        animate={reduce ? {} : { scaleY: [0.85, 1.12, 0.9], opacity: [0.85, 1, 0.85] }}
+        transition={{ duration: 0.3, repeat: Infinity, repeatType: 'mirror' }}>
+        <path d="M31 23 Q43 13 51 3 Q45 15 37 25 Z" fill="#ff5a1a" />
+        <path d="M31 24 Q40 16 46 8 Q42 17 36 26 Z" fill="#ffb02e" />
+        <path d="M31 25 Q37 19 41 13 Q39 19 35 27 Z" fill="#ffe27a" />
+      </motion.g>
+      {/* asteroid body */}
+      <path d="M18 22 L24 16 L32 17 L38 23 L38 32 L31 38 L22 37 L15 30 Z" fill="url(#astRock)" stroke="#241f1b" strokeWidth="0.6" />
+      <path d="M24 16 L32 17 L38 23" fill="none" stroke="#ffbd73" strokeWidth="1.5" strokeLinecap="round" opacity="0.85" />
+      <circle cx="23" cy="27" r="2.4" fill="#39322c" />
+      <circle cx="30" cy="31" r="1.8" fill="#39322c" />
+      <circle cx="20" cy="32" r="1.3" fill="#39322c" />
+    </svg>
+  </div>
+);
+
+/* ------------------------------------------------------------------ */
 /*  Guide                                                              */
 /* ------------------------------------------------------------------ */
 const S = 60; // Cosmo size when open
@@ -335,14 +368,14 @@ const Guide: React.FC<{ steps?: GuideStep[] }> = ({ steps = PORTFOLIO_STEPS }) =
         {phase === 'idle' && (
           <motion.button key="launch" onClick={start}
             initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.6 }}
-            whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.94 }}
-            className="fixed z-[900] right-5 bottom-5 flex items-center gap-2 rounded-full pl-2 pr-4 py-2 border border-[rgba(181,123,255,0.45)] bg-[rgba(12,9,26,0.9)] backdrop-blur-xl shadow-[0_10px_30px_-8px_rgba(45,0,247,0.6)]"
-            aria-label="Take a guided tour with Cosmo">
+            whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.92 }}
+            className="fixed z-[900] right-4 bottom-4 flex items-center gap-2 rounded-full p-1 sm:pr-4 border border-[rgba(245,138,26,0.45)] bg-[rgba(12,9,26,0.85)] backdrop-blur-xl shadow-[0_10px_30px_-8px_rgba(255,120,20,0.5)]"
+            aria-label="Take a guided tour with Cosmo" title="Tour with Cosmo">
             {!reduce && (
-              <motion.span className="absolute inset-0 rounded-full border border-[rgba(53,224,207,0.5)]" animate={{ scale: [1, 1.25], opacity: [0.6, 0] }} transition={{ duration: 1.8, repeat: Infinity }} />
+              <motion.span className="absolute inset-0 rounded-full border border-[rgba(245,138,26,0.5)]" animate={{ scale: [1, 1.3], opacity: [0.6, 0] }} transition={{ duration: 1.8, repeat: Infinity }} />
             )}
-            <Cosmo size={38} reduce={reduce} />
-            <span className="font-[JetBrains_Mono] text-[12px] text-[var(--starry-white)]">Tour with&nbsp;Cosmo</span>
+            <Asteroid size={40} reduce={reduce} />
+            <span className="hidden sm:inline font-[JetBrains_Mono] text-[12px] text-[var(--starry-white)]">Tour with&nbsp;Cosmo</span>
           </motion.button>
         )}
       </AnimatePresence>

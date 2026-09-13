@@ -1336,6 +1336,37 @@ button:hover ~ .ufo-cursor .flames .flame,
   to { transform: rotateX(-360deg); }
 }
 
+/* Education desktop — rocket launch trajectory */
+.edu-ms {
+  opacity: 0;
+  transform: translateY(26px) scale(0.96);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+.edu-ms.shown { opacity: 1; transform: none; }
+
+@keyframes eduFlameFlick {
+  from { transform: scaleY(0.82) scaleX(0.96); }
+  to { transform: scaleY(1.08) scaleX(1.03); }
+}
+.edu-rocket .edu-flame { transform-origin: 30px 150px; opacity: 0; transition: opacity 0.25s ease; }
+.edu-rocket.lit .edu-flame { opacity: 1; animation: eduFlameFlick 0.09s infinite alternate; }
+
+@keyframes eduSmokeRise {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  25% { opacity: 0.5; }
+  100% { transform: translateY(-46px) scale(1.7); opacity: 0; }
+}
+.edu-pad .edu-smoke span {
+  position: absolute; bottom: 0; width: 22px; height: 22px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(210,210,220,0.55), transparent 70%); opacity: 0;
+}
+.edu-pad.active .edu-smoke span { animation: eduSmokeRise 1.5s infinite ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .edu-rocket.lit .edu-flame, .edu-pad.active .edu-smoke span { animation: none; }
+}
+
 /* Education "quiet luxury" phase number — subtle shimmer */
 .ql-num {
   color: transparent;
