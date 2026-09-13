@@ -26,6 +26,11 @@ export default function Achievements() {
           <p>1st in Map-an-App and 2nd in DV Contest at Convergence; Runner-up at the national-level Techno-Vista 2K25.</p>
         </div>
         <div className="gradient-border p-4">
+          <h3 className="text-xl font-bold text-gradient">Turing Cup 2025</h3>
+          <p className="font-[JetBrains Mono] text-gray-400">Finalist</p>
+          <p>Finalist in Turing Cup 2025.</p>
+        </div>
+        <div className="gradient-border p-4">
           <h3 className="text-xl font-bold text-gradient">Hackathon & Pitch Finalist</h3>
           <p className="font-[JetBrains Mono] text-gray-400">Multiple Competitions</p>
           <p>Finalist across product-pitching competitions and hackathons, recognized for innovation, feasibility, and technical execution.</p>
