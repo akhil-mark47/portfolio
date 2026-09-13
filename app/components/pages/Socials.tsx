@@ -47,7 +47,7 @@ const socialLinks = [
     hoverRotate: -5
   },
   { 
-    href: "https://x.com/akhilvarsp",
+    href: "https://x.com/akhilvarshp",
     Icon: FaXTwitter,
     style: { color: "#000" },
     hoverRotate: -5
