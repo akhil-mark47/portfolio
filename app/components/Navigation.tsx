@@ -105,177 +105,85 @@ const Navigation: React.FC<NavigationProps> = ({
           className="text-[var(--starry-white)] relative ml-auto"
           aria-label={isOpen ? 'Close menu' : 'Open menu'}
         >
-          {/* Your rocket SVG code */}
+          {/* Rocket menu icon */}
           <motion.svg
             className="w-10 h-10"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="currentColor"
-            strokeWidth={1.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
             animate={{
               rotate: isOpen ? 45 : 0,
-              scale: isOpen ? 1.1 : 1,
+              y: isIgnited ? -1 : 0,
+              scale: isOpen ? 1.08 : 1,
             }}
             transition={{
-              rotate: { duration: 0.5, type: 'spring', stiffness: 100 },
+              rotate: { duration: 0.5, type: 'spring', stiffness: 120 },
               scale: { duration: 0.3 },
             }}
+            aria-hidden="true"
           >
-            {/* Rocket Body */}
+            <defs>
+              <linearGradient id="rk-body" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#d6cbff" />
+                <stop offset="45%" stopColor="#9333ea" />
+                <stop offset="100%" stopColor="#3b82f6" />
+              </linearGradient>
+              <radialGradient id="rk-win" cx="0.4" cy="0.35" r="0.75">
+                <stop offset="0%" stopColor="#bff5fb" />
+                <stop offset="55%" stopColor="#22d3ee" />
+                <stop offset="100%" stopColor="#0e7490" />
+              </radialGradient>
+            </defs>
+
+            {/* Fins */}
             <motion.path
-              d="M12 22V8M12 8C12 8 17 6 17 3C17 1.5 14.5 1 12 3C9.5 1 7 1.5 7 3C7 6 12 8 12 8Z"
-              stroke="currentColor"
-              strokeWidth={2}
-              fill="currentColor"
-              animate={{
-                y: isIgnited ? -1 : 0,
-                fillOpacity: isIgnited ? 1 : 0.7,
-              }}
-            />
-             {/* Rocket Windows */}
-             <motion.circle 
-           cx="11" 
-           cy="23" 
-           r="0.5" 
-           fill="#888"
-           initial={{ opacity: 0 }}
-           animate={{ 
-             opacity: isIgnited ? [0, 0.4, 0.2, 0] : 0,
-             y: isIgnited ? [0, 1, 2, 3] : 0,
-             x: isIgnited ? [0, -1, -2, -3] : 0,
-           }}
-           transition={{ 
-             duration: 1.5,
-             repeat: isIgnited ? Infinity : 0,
-             repeatDelay: 0.5
-           }}
-         />
-         <motion.circle />
-            {/* Rocket Fins */}
-            <motion.path
-              d="M10 20L7 18V13L10 15V20Z"
-              fill="currentColor"
-              stroke="currentColor"
-              animate={{
-                x: isIgnited ? -0.5 : 0,
-                fillOpacity: isIgnited ? 1 : 0.9,
-              }}
+              d="M8.6 13.4 L5.5 17.1 C5.2 17.4 5.1 17.9 5.2 18.5 L5.4 19.5 C7 18.8 8.1 17.8 8.9 16.5 Z"
+              fill="#7c3aed"
+              animate={{ x: isIgnited ? -0.4 : 0 }}
             />
             <motion.path
-              d="M14 20L17 18V13L14 15V20Z"
-              fill="currentColor"
-              stroke="currentColor"
-              animate={{
-                x: isIgnited ? 0.5 : 0,
-                fillOpacity: isIgnited ? 1 : 0.9,
-              }}
+              d="M15.4 13.4 L18.5 17.1 C18.8 17.4 18.9 17.9 18.8 18.5 L18.6 19.5 C17 18.8 15.9 17.8 15.1 16.5 Z"
+              fill="#7c3aed"
+              animate={{ x: isIgnited ? 0.4 : 0 }}
             />
-            {/* Fire/Exhaust Animations */}
-            <motion.g>
-              {/* Main Exhaust */}
-              <motion.path
-                d="M12 22C12 22 10 21 10 19.5C10 18 12 16 12 16C12 16 14 18 14 19.5C14 21 12 22 12 22Z"
-                fill="#FF4500"
-                initial={{ opacity: 0, y: -2 }}
-                animate={{
-                  opacity: isIgnited ? [0.8, 1, 0.9, 0.8] : 0,
-                  y: isIgnited ? [2, 3, 2.5, 2] : 0,
-                  scale: isIgnited ? [1, 1.2, 1.1, 1] : 0.8,
-                }}
-                transition={{
-                  duration: 1.2,
-                  times: [0, 0.3, 0.6, 1],
-                  repeat: isIgnited ? Infinity : 0,
-                  repeatType: 'reverse',
-                }}
-              />
-              {/* Yellow Inner Flame */}
-              <motion.path
-                d="M12 22C12 22 11 21.2 11 20C11 18.8 12 18 12 18C12 18 13 18.8 13 20C13 21.2 12 22 12 22Z"
-                fill="#FFD700"
-                initial={{ opacity: 0, y: -3 }}
-                animate={{
-                  opacity: isIgnited ? [0.7, 1, 0.8, 0.7] : 0,
-                  y: isIgnited ? [1, 2, 1.5, 1] : 0,
-                  scale: isIgnited ? [0.9, 1.1, 1, 0.9] : 0.7,
-                }}
-                transition={{
-                  duration: 0.8,
-                  times: [0, 0.3, 0.6, 1],
-                  repeat: isIgnited ? Infinity : 0,
-                  repeatType: 'mirror',
-                }}
-              />
-              {/* Small Side Flames */}
-              <motion.path
-                d="M10 22C10 22 9.5 21.5 9.5 20.5C9.5 19.5 10 19 10 19"
-                stroke="#FF4500"
-                strokeWidth={1.5}
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: isIgnited ? [0.3, 0.7, 0.5, 0.3] : 0,
-                  pathLength: isIgnited ? [0.5, 0.8, 0.6, 0.5] : 0,
-                }}
-                transition={{
-                  duration: 1,
-                  repeat: isIgnited ? Infinity : 0,
-                  repeatType: 'mirror',
-                }}
-              />
-              <motion.path
-                d="M14 22C14 22 14.5 21.5 14.5 20.5C14.5 19.5 14 19 14 19"
-                stroke="#FF4500"
-                strokeWidth={1.5}
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: isIgnited ? [0.3, 0.7, 0.5, 0.3] : 0,
-                  pathLength: isIgnited ? [0.5, 0.8, 0.6, 0.5] : 0,
-                }}
-                transition={{
-                  duration: 1.2,
-                  repeat: isIgnited ? Infinity : 0,
-                  repeatType: 'mirror',
-                }}
-              />
-              {/* Smoke/Particle Effects */}
-              <motion.circle
-                cx="11"
-                cy="23"
-                r="0.5"
-                fill="#888"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: isIgnited ? [0, 0.4, 0.2, 0] : 0,
-                  y: isIgnited ? [0, 1, 2, 3] : 0,
-                  x: isIgnited ? [0, -1, -2, -3] : 0,
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: isIgnited ? Infinity : 0,
-                  repeatDelay: 0.5,
-                }}
-              />
-              <motion.circle
-                cx="13"
-                cy="23"
-                r="0.5"
-                fill="#888"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: isIgnited ? [0, 0.4, 0.2, 0] : 0,
-                  y: isIgnited ? [0, 1, 2, 3] : 0,
-                  x: isIgnited ? [0, 1, 2, 3] : 0,
-                }}
-                transition={{
-                  duration: 1.5,
-                  delay: 0.3,
-                  repeat: isIgnited ? Infinity : 0,
-                  repeatDelay: 0.7,
-                }}
-              />
-            </motion.g>
+
+            {/* Body */}
+            <path
+              d="M12 2 C14.7 4.7 15.6 8.3 15.6 11.7 L15.6 16 C15.6 17.5 14 18.2 12 18.2 C10 18.2 8.4 17.5 8.4 16 L8.4 11.7 C8.4 8.3 9.3 4.7 12 2 Z"
+              fill="url(#rk-body)"
+              stroke="#ede9fe"
+              strokeWidth="0.4"
+            />
+
+            {/* Window + highlight */}
+            <circle cx="12" cy="9" r="2.15" fill="url(#rk-win)" stroke="#ede9fe" strokeWidth="0.5" />
+            <circle cx="11.3" cy="8.3" r="0.55" fill="#ffffff" fillOpacity="0.85" />
+
+            {/* Body seam */}
+            <path d="M9 13.1 H15" stroke="#ede9fe" strokeWidth="0.4" strokeOpacity="0.5" strokeLinecap="round" />
+
+            {/* Exhaust flames — ignite when the menu is open */}
+            <motion.path
+              d="M12 18 C13.5 18.9 14.1 20.1 14.1 21.4 C14.1 22.8 13.2 23.7 12 23.7 C10.8 23.7 9.9 22.8 9.9 21.4 C9.9 20.1 10.5 18.9 12 18 Z"
+              fill="#ff7a1a"
+              style={{ transformOrigin: '12px 18px' }}
+              initial={{ opacity: 0, scaleY: 0.6 }}
+              animate={{
+                opacity: isIgnited ? [0.85, 1, 0.9] : 0,
+                scaleY: isIgnited ? [0.8, 1.15, 0.9] : 0.6,
+              }}
+              transition={{ duration: 0.5, repeat: isIgnited ? Infinity : 0, repeatType: 'mirror' }}
+            />
+            <motion.path
+              d="M12 19 C12.9 19.6 13.2 20.5 13.2 21.3 C13.2 22.2 12.7 22.9 12 22.9 C11.3 22.9 10.8 22.2 10.8 21.3 C10.8 20.5 11.1 19.6 12 19 Z"
+              fill="#ffd93d"
+              style={{ transformOrigin: '12px 19px' }}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: isIgnited ? [0.8, 1, 0.85] : 0,
+                scaleY: isIgnited ? [0.8, 1.1, 0.9] : 0.6,
+              }}
+              transition={{ duration: 0.35, repeat: isIgnited ? Infinity : 0, repeatType: 'mirror' }}
+            />
           </motion.svg>
         </button>
       </div>

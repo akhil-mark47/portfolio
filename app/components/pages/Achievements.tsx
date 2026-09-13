@@ -9,11 +9,11 @@ export default function Achievements() {
           <p className="font-[JetBrains Mono] text-gray-400">AICTE | 2025</p>
           <p>Qualified for Round 2 (Funding Stage) of the national productization fellowship.</p>
         </div>
-        <div className="gradient-border p-4">
+        {/* <div className="gradient-border p-4">
           <h3 className="text-xl font-bold text-gradient">Competitive Programming</h3>
           <p className="font-[JetBrains Mono] text-gray-400">Codeforces · CodeChef · LeetCode</p>
-          <p>Pupil (1385) on Codeforces, 1785 (3★, Div 2) on CodeChef, and 1695 on LeetCode (Top 8% globally) with 300+ problems solved.</p>
-        </div>
+          <p>Specialist (1385) on Codeforces, 1785 (3★, Div 2) on CodeChef, and 1695 on LeetCode (Top 8% globally) with 300+ problems solved.</p>
+        </div> */}
         <div className="gradient-border p-4">
           <h3 className="text-xl font-bold text-gradient">VNR Design-A-thon 4.O</h3>
           <p className="font-[JetBrains Mono] text-gray-400">1st Position</p>
@@ -27,7 +27,7 @@ export default function Achievements() {
         </div>
         <div className="gradient-border p-4">
           <h3 className="text-xl font-bold text-gradient">Turing Cup 2025</h3>
-          <p className="font-[JetBrains Mono] text-gray-400">Finalist</p>
+          <p className="font-[JetBrains Mono] text-gray-400">Turing Hut</p>
           <p>Finalist in Turing Cup 2025.</p>
         </div>
         <div className="gradient-border p-4">

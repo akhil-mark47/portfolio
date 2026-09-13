@@ -4,12 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Starfield from '../StarField';
 import SpaceObjects from '../SpaceObjects';
+import SlotMachine from './SlotMachine';
+import Guide, { SPACE_STEPS } from '../Guide';
 
 /* ================================================================== */
 /*  Data                                                               */
 /* ================================================================== */
 
-type AppId = 'hobbies' | 'movies' | 'books' | 'music' | 'quotes';
+type AppId = 'hobbies' | 'movies' | 'books' | 'music' | 'quotes' | 'slots';
 
 const APPS: { id: AppId; title: string; ext: string; icon: string }[] = [
   { id: 'hobbies', title: 'hobbies', ext: '.dat', icon: '🚀' },
@@ -17,6 +19,7 @@ const APPS: { id: AppId; title: string; ext: string; icon: string }[] = [
   { id: 'books', title: 'books', ext: '.txt', icon: '📚' },
   { id: 'music', title: 'music', ext: '.wav', icon: '🎵' },
   { id: 'quotes', title: 'quotes', ext: '.log', icon: '💭' },
+  { id: 'slots', title: 'slots', ext: '.exe', icon: '🎰' },
 ];
 
 const HOBBIES = [
@@ -509,6 +512,8 @@ const PersonalSpace: React.FC = () => {
             </div>
           </div>
         );
+      case 'slots':
+        return <SlotMachine />;
       case 'quotes':
         return (
           <div className="space-y-3">
@@ -661,6 +666,7 @@ const PersonalSpace: React.FC = () => {
         )}
 
         {TrailerModal}
+        <Guide steps={SPACE_STEPS} />
       </section>
     );
   }
@@ -745,16 +751,6 @@ const PersonalSpace: React.FC = () => {
         })}
       </AnimatePresence>
 
-      {/* ---- Now-playing widget ---- */}
-      <button onClick={() => openApp('music')} className="fixed bottom-24 left-4 z-30 flex items-center gap-3 px-3 py-2 rounded-full border border-[rgba(59,130,246,0.3)] bg-[rgba(10,10,24,0.8)] backdrop-blur-md hover:border-[rgba(147,51,234,0.6)] transition">
-        <motion.span className="h-7 w-7 rounded-full flex items-center justify-center text-[10px]" style={{ background: 'repeating-radial-gradient(circle,#111 0 1.5px,#1c1c28 1.5px 3px)' }} animate={{ rotate: playing ? 360 : 0 }} transition={{ duration: 3, repeat: playing ? Infinity : 0, ease: 'linear' }}>◉</motion.span>
-        <div className="text-left">
-          <div className="text-[11px] font-[JetBrains Mono] text-[var(--starry-white)] max-w-[140px] truncate">{nowPlaying.title}</div>
-          <div className="text-[9px] text-gray-500 max-w-[140px] truncate">{nowPlaying.artist}</div>
-        </div>
-        <Equalizer active={playing} />
-      </button>
-
       {/* ---- Dock ---- */}
       <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40">
         <div className="flex items-end gap-3 px-4 py-2 rounded-2xl border border-[rgba(59,130,246,0.3)] bg-[rgba(10,10,24,0.75)] backdrop-blur-xl shadow-[0_0_30px_rgba(45,0,247,0.25)]">
@@ -794,6 +790,7 @@ const PersonalSpace: React.FC = () => {
       </AnimatePresence>
 
       {TrailerModal}
+      <Guide steps={SPACE_STEPS} />
     </section>
   );
 };
