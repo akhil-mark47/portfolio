@@ -23,7 +23,7 @@ export default function About() {
         <p className="leading-relaxed">
           Greetings, Earthlings! 🌌 I'm <span className="font-bold text-gradient">Akhilvarsh</span>, a passionate 
           tech geek driven by the unyielding desire to redefine the boundaries 
-          of human potential through <span className="font-bold">AI and LLMs</span>.
+          of human potential through <span className="font-bold">AI</span>.
         </p>
 
         <p className="leading-relaxed">
